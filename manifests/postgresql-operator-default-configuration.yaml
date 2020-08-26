@@ -24,6 +24,7 @@ configuration:
     replication_username: standby
     super_username: postgres
   kubernetes:
+    pod_environment_configmap: default/postgres-pod-config
     cluster_domain: cluster.local
     cluster_labels:
       application: spilo

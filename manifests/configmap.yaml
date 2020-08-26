@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: postgres-operator
 data:
+  pod_environment_configmap: default/postgres-pod-config
   # additional_secret_mount: "some-secret-name"
   # additional_secret_mount_path: "/some/dir"
   api_port: "8080"
@@ -36,10 +37,10 @@ data:
   # enable_database_access: "true"
   # enable_init_containers: "true"
   # enable_lazy_spilo_upgrade: "false"
-  enable_master_load_balancer: "false"
+  enable_master_load_balancer: "true"
   # enable_pod_antiaffinity: "false"
   # enable_pod_disruption_budget: "true"
-  enable_replica_load_balancer: "false"
+  enable_replica_load_balancer: "true"
   # enable_shm_volume: "true"
   # enable_sidecars: "true"
   # enable_team_superuser: "false"
@@ -53,13 +54,13 @@ data:
   # kube_iam_role: ""
   # log_s3_bucket: ""
   logical_backup_docker_image: "registry.opensource.zalan.do/acid/logical-backup"
-  # logical_backup_s3_access_key_id: ""
-  logical_backup_s3_bucket: "my-bucket-url"
-  # logical_backup_s3_region: ""
-  # logical_backup_s3_endpoint: ""
-  # logical_backup_s3_secret_access_key: ""
-  logical_backup_s3_sse: "AES256"
-  logical_backup_schedule: "30 00 * * *"
+  logical_backup_s3_access_key_id: "BKIKJAA5BMMU2RHO6IBB"
+  logical_backup_s3_bucket: "test-backup"
+  #logical_backup_s3_region: "eu-central-1"
+  logical_backup_s3_endpoint: "http://185.22.98.6:32000"
+  logical_backup_s3_secret_access_key: "V7f1CwQqAcwo80UEIJEjc5gVQUSSx5ohQ9GSrr12"
+#  logical_backup_s3_sse: "AES256"
+  logical_backup_schedule: "* * * * *"
   master_dns_name_format: "{cluster}.{team}.{hostedzone}"
   # master_pod_move_timeout: 20m
   # max_instances: "-1"
