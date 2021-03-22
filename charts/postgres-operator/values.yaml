@@ -259,19 +259,19 @@ configLogicalBackup:
   # storage provider - either "s3" or "gcs"
   logical_backup_provider: "s3"
   # S3 Access Key ID
-  logical_backup_s3_access_key_id: ""
+  logical_backup_s3_access_key_id: "minio"
   # S3 bucket to store backup results
-  logical_backup_s3_bucket: "my-bucket-url"
-  # S3 endpoint url when not using AWS
-  logical_backup_s3_endpoint: ""
+  logical_backup_s3_bucket: "test"
   # S3 region of bucket
-  logical_backup_s3_region: ""
+  logical_backup_s3_region: "minio"
+  # S3 endpoint url when not using AWS
+  logical_backup_s3_endpoint: "http://185.22.97.78:32000"
   # S3 Secret Access Key
-  logical_backup_s3_secret_access_key: ""
+  logical_backup_s3_secret_access_key: "minio123"
   # S3 server side encryption
-  logical_backup_s3_sse: "AES256"
+  #logical_backup_s3_sse: "AES256"
   # backup schedule in the cron format
-  logical_backup_schedule: "30 00 * * *"
+  logical_backup_schedule: "* * * * *"
 
 
 # automate creation of human users with teams API service

@@ -4,6 +4,19 @@ metadata:
   name: acid-minimal-cluster
   namespace: default
 spec:
+  enableConnectionPooler: true
+  enableReplicaConnectionPooler: true
+  connectionPooler:
+    numberOfInstances: 2
+    mode: "transaction"
+    user: "pooler"
+    resources:
+      requests:
+        cpu: 500m
+        memory: 100Mi
+      limits:
+        cpu: "1"
+        memory: 100Mi
   teamId: "acid"
   volume:
     size: 1Gi
