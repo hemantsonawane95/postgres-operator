@@ -31,8 +31,12 @@ configuration:
     minimal_major_version: "9.5"
     target_major_version: "13"
   kubernetes:
+<<<<<<< HEAD
     # additional_pod_capabilities:
     # - "SYS_NICE"
+=======
+    pod_environment_configmap: default/postgres-pod-config
+>>>>>>> 3404fc4a32e6417f32cb722307238188cd38e20c
     cluster_domain: cluster.local
     cluster_labels:
       application: spilo
